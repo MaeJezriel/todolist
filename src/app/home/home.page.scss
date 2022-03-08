@@ -10,6 +10,22 @@ ion-toolbar {
   --background: var(--main-yellow);
 }
 
+.icon{
+  color: var(--black);
+}
+
+.delete{
+  margin-top: 5px;
+  font-size: 20px;
+  color: #ff4961;
+}
+
+.update{
+  margin-top: 5px;
+  font-size: 20px;
+  color: #3a7be0;
+}
+
 .add-task{
   /*--background: #3dc2ff;*/
   --background: var(--dark-yellow);
@@ -49,18 +65,40 @@ ion-toolbar {
 
 }
  
-
 #container {
-  padding: 5px;
+  padding: 5%;
   columns: 2;
-  column-gap: 5px;
+  column-gap: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+ion-card-content{
+  margin: 0px;
 }
 
 ion-card {
   width: 90%;
-  margin: 10px 10px 0px 10px;
+  margin: 10px;
   break-inside: avoid;
   background-color: var(--light-yellow);
 }
 
+.title{
+  font-family: 'DM Sans';
+  color: var(--black);
+  font-size: medium;
+}
+
+.subtitle{
+  font-family: 'DM Sans';
+  color: var(--black);
+}
+
+.content{
+  font-family: 'DM Sans';
+  color: var(--black);
+}
 
