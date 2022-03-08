@@ -50,8 +50,8 @@ export class AddTaskPage implements OnInit {
 }
 
  
-  // public dismiss(): void {
-  //   this.modalController.dismiss();
-  // }
+   public dismiss(): void {
+     this.modalCtrl.dismiss();
+  }
 
 }

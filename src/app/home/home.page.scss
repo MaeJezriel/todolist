@@ -33,3 +33,34 @@ ion-toolbar {
   margin-top: 105%;
   font-family: 'DM Sans';
 }
+
+.title {
+  font-size: 80%;
+}
+
+
+.subtitle {
+  font-size: 80%;
+ 
+}
+
+.content {
+  font-size: 80%;
+
+}
+ 
+
+#container {
+  padding: 5px;
+  columns: 2;
+  column-gap: 5px;
+}
+
+ion-card {
+  width: 100%;
+  margin: 0 0 10px 0;
+  break-inside: avoid;
+  background-color: whitesmoke;
+}
+
+
