@@ -29,9 +29,16 @@
     /* Colors */
     --main-yellow: #fac42e;
     --dark-yellow: #e4a803;
+    --light-yellow: #ecd698;
     --white: #ffffff;
     --black: #333333;
+    --gray: #b1b1b1;
 
     /* Fonts Used */
     --body-font: 'DM Sans';
+
+    .centered {
+        display: flex;
+        justify-content: center;
+    }
 }
