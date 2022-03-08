@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { AlertController, ModalController, ToastController } from '@ionic/angular';
+import { AddTaskPage } from '../add-task/add-task.page';
+
 
 @Component({
   selector: 'app-home',
@@ -7,6 +10,13 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private modalController: ModalController) {}
 
+  public async openModal() {
+    const selectedModal = await this.modalController.create({
+      component:  AddTaskPage ,
+      cssClass: "my-custom-class"
+    });
+    return await selectedModal.present();
+  }
 }
