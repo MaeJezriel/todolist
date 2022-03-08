@@ -69,14 +69,14 @@ ion-toolbar {
   padding: 5%;
   columns: 2;
   column-gap: 10px;
-  display: -webkit-box;
-  -webkit-line-clamp: 7;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
 ion-card-content{
   margin: 0px;
+  display: -webkit-box;
+  -webkit-line-clamp: 14;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 ion-card {
@@ -84,6 +84,7 @@ ion-card {
   margin: 10px;
   break-inside: avoid;
   background-color: var(--light-yellow);
+
 }
 
 .title{
