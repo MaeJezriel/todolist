@@ -1,7 +1,7 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-title>
-      Blank
+      TO-DO LIST
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,28 +13,29 @@
     </ion-toolbar>
   </ion-header>
 
-<!-- List of Notes -->
+  <img class="img1" src="/assets/icon/notes.jpg" alt="Rectangle-219-1" border="0">
+    <div class="center">
+      <h4 class="empty-text">Add a task to get started.</h4>
+    </div>
 
-
+  <!-- List of Notes -->
   <div id = "container">
-  <ion-list *ngFor="let task of tasks">
-      <ion-card>
-        <ion-card-content>
-        <h1 class="title"> {{task.title}} </h1>
-        <h2 class = "subtitle"> {{'substitle      :' + task.subtitle}}</h2>
-        <h3 class = "content"> {{'content       :' + task.content}}</h3>
-        <ion-icon name="trash" (click)="removeTask(task.id)"> </ion-icon>
-        <ion-icon name="create-outline" (click)="updateTask(task)"> </ion-icon>
-      </ion-card-content>
-      </ion-card>
-  </ion-list>
-</div>
-
-
+    <ion-list *ngFor="let task of tasks">
+        <ion-card>
+          <ion-card-content>
+          <h1 class="title"> {{task.title}} </h1>
+          <h2 class = "subtitle"> {{'substitle      :' + task.subtitle}}</h2>
+          <h3 class = "content"> {{'content       :' + task.content}}</h3>
+          <ion-icon name="trash" (click)="removeTask(task.id)"> </ion-icon>
+          <ion-icon name="create-outline" (click)="updateTask(task)"> </ion-icon>
+        </ion-card-content>
+        </ion-card>
+    </ion-list>
+  </div>
 
    <!-- fab placed to the bottom and start and on the bottom edge of the content overlapping footer with a list to the right -->
    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button (click)="addtaskmodal()"> <ion-icon name="add"></ion-icon>
+    <ion-fab-button class="add-task" (click)="addtaskmodal()"> <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 </ion-content>
