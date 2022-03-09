@@ -15,6 +15,15 @@ const routes: Routes = [
     path: 'add-task',
     loadChildren: () => import('./add-task/add-task.module').then( m => m.AddTaskPageModule)
   },
+  {
+    path: 'create',
+    loadChildren: () => import('./create/create.module').then( m => m.CreatePageModule)
+  },
+  {
+    path: 'edit/:id',
+    loadChildren: () => import('./edit/edit.module').then( m => m.EditPageModule)
+  },
+
 ];
 
 @NgModule({
