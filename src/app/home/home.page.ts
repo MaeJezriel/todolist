@@ -23,12 +23,6 @@ export class HomePage implements OnInit {
      this.crud.databaseConn(); 
    }
  
-  // ngOnInit() {
-  //   this.service.getAll().subscribe(response =>  {
-  //    this.tasks = response;
-  //   })
-  // }
-
   ngOnInit() { }
 
   ionViewDidEnter() {  
@@ -43,13 +37,6 @@ export class HomePage implements OnInit {
     this.crud.deleteUser(user);
   }
 
-  // addtaskmodal() {
-  //   this.modalCtrl
-  //  .create({
-  //    component: AddTaskPage,
-  //    cssClass: "my-custom-class"
-  //   })
-  // }
 
   async addtaskmodal() {
     const modal = await this.modalCtrl.create({
@@ -60,54 +47,10 @@ export class HomePage implements OnInit {
   }
 }
 
-//     addtaskmodal() {
-//   const modal = await this.modalController.create({
-//     component: RegisterTermPage,
-//     cssClass: "my-custom-class"
-//   });
-//   return await modal.present();
-// }
-
 
     
 
-  // updateTask(task:Task) {
-  //   this.modalCtrl.create({
-  //     component: AddTaskPage,
-  //     componentProps: {task} //shot hand of {task: task}
-  //     //Pass the task object to the modal
-  //   })
-  //   .then(modal => {
-  //    modal.present();
-  //    return modal.onDidDismiss();
-  //   }).then(({data, role}) => {
-  //     this.tasks = this.tasks.filter(std => {
-  //       if(data.id === std.id) {
-  //         return data; //return updated
-  //       }
-  //       return std;
-  //     })
-  //   });
-  // }
-
-
-  // removeTask(id: string){
-  //   this.alertCtrl.create({
-  //     header: 'Delete',
-  //     message: 'Are you sure you want to delete?',
-  //     buttons: [{
-  //       text: 'Yes',
-  //       handler: () => {
-  //         this.service.remove(id).subscribe(() =>{
-  //           this.tasks = this.tasks.filter(std => std.id !== id);
-  //       });
-  //     }
-  //     }, 
-  //     { text: 'No' } 
-  //   ]
-  //   }) .then(alertEl => alertEl.present());
-  // }
-
+ 
    
 
 
