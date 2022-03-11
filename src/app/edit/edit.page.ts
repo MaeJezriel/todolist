@@ -30,7 +30,7 @@ export class EditPage implements OnInit {
 
   onUpdate() {
      this.crud.updateUser(this.id, this.nameVal, this.emailVal).then(() => {
-        this.router.navigate(['/create']);
+        this.router.navigate(['/home']);
      })
   }
 

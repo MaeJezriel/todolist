@@ -11,7 +11,7 @@
 
   <img class="img1" src="/assets/icon/notes.jpg" alt="Rectangle-219-1" border="0">
 
-  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <!-- <form #f="ngForm" (ngSubmit)="onSubmit(f)">
     <ion-item>
       <ion-label position="floating">Task</ion-label>
       <ion-input [(ngModel)]="data.title" name="title"></ion-input>
@@ -27,4 +27,20 @@
     
     <ion-button expand="block" type="submit">{{isUpdate ? 'Update' : 'Save'}}</ion-button>
 
-  </form>
+  </form> -->
+
+   <!-- Create -->
+   <ion-item>
+    <ion-label position="floating">Name</ion-label>
+    <ion-input [(ngModel)]="nameVal"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating">Email</ion-label>
+    <ion-input [(ngModel)]="emailVal"></ion-input>
+  </ion-item>
+
+  <ion-button color="success" expand="block" (click)="createUser()">
+    Add User
+  </ion-button>
+
