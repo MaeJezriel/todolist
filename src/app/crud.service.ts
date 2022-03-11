@@ -129,12 +129,38 @@ export class CrudService {
       this.dbInstance.executeSql(`
       DELETE FROM ${this.db_table} WHERE user_id = ${user}`, [])
         .then(() => {
-          alert("User deleted!");
+          //alert("Note deleted!");
           this.getAllUsers();
+          this.delAlert();
         })
         .catch(e => {
           alert(JSON.stringify(e))
         });
     }
+
+    async delAlert() {
+      const alert = await this.alertController.create({
+        cssClass: 'my-custom-class',
+        header: 'Delete!',
+        message: 'You have deleted a note .',
+        buttons: [
+          {
+            text: 'Ok!',
+            handler: () => {
+              this.dismissModal();
+              //this.sendMessage(); // For Realtime pulling
+              this.router.navigate(['/home']);
+            }
+          }
+        ]
+      });
+    await alert.present();
+  }
+
+  // dismissModal() {
+  //   this.modalController.dismiss({
+  //     'dismissed': true
+  //   });
+  // }
 
 }
