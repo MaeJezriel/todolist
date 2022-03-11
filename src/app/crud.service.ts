@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Platform } from '@ionic/angular';
+import { AlertController, ModalController, Platform } from '@ionic/angular';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite/ngx';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -9,13 +10,16 @@ import { SQLite, SQLiteObject } from '@ionic-native/sqlite/ngx';
 export class CrudService {
   
   private dbInstance: SQLiteObject;
-  readonly db_name: string = "remotestack.db";
-  readonly db_table: string = "userTable";
+  readonly db_name: string = "todo.db";
+  readonly db_table: string = "todoTable";
   USERS: Array <any> ;
 
   constructor(
     private platform: Platform,
-    private sqlite: SQLite    
+    private sqlite: SQLite,
+    private router: Router,
+    public alertController: AlertController,
+    public modalController: ModalController    
   ) { 
     this.databaseConn();
   }
@@ -53,8 +57,11 @@ export class CrudService {
       this.dbInstance.executeSql(`
       INSERT INTO ${this.db_table} (name, email) VALUES ('${n}', '${e}')`, [])
         .then(() => {
-          alert("Success");
+          //alert("Success");
+          // this.router.navigate(['/home']);
           this.getAllUsers();
+          this.successAlert();
+         
         }, (e) => {
           alert(JSON.stringify(e.err));
         });
@@ -73,6 +80,31 @@ export class CrudService {
         alert(JSON.stringify(e));
       });
     }
+
+    async successAlert() {
+      const alert = await this.alertController.create({
+        cssClass: 'my-custom-class',
+        header: 'Success!',
+        message: 'You have successfully added new note .',
+        buttons: [
+          {
+            text: 'Great!',
+            handler: () => {
+              this.dismissModal();
+              //this.sendMessage(); // For Realtime pulling
+              this.router.navigate(['/home']);
+            }
+          }
+        ]
+      });
+    await alert.present();
+  }
+
+  dismissModal() {
+    this.modalController.dismiss({
+      'dismissed': true
+    });
+  }
 
     // Get user
     getUser(id): Promise<any> {
