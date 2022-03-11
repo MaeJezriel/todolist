@@ -1,3 +1,7 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -31,16 +35,18 @@
 
    <!-- Create -->
    <ion-item>
-    <ion-label position="floating">Name</ion-label>
+    <ion-label>Name</ion-label>
     <ion-input [(ngModel)]="nameVal"></ion-input>
   </ion-item>
   
   <ion-item>
-    <ion-label position="floating">Email</ion-label>
+    <ion-label>Email</ion-label>
     <ion-input [(ngModel)]="emailVal"></ion-input>
   </ion-item>
 
-  <ion-button color="success" expand="block" (click)="createUser()">
-    Add User
-  </ion-button>
+  <div class="centered">
+    <ion-button class="btn" expand="block" (click)="createUser()">
+      Add User
+    </ion-button>
+  </div>
 

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
 ion-header,
 ion-toolbar {
   --background: var(--main-yellow);
@@ -14,5 +16,39 @@ ion-title{
     font-family: var(--body-font);
     font-weight: bold;
     color: var(--black);
+}
+
+ion-item {
+  background: var(--white);
+  border: 2px solid var(--main-yellow);
+  box-sizing: border-box;
+  height: 52px;
+  margin: 25px 15px 15px 15px;
+  border-radius: 10px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  text-align: left;
+
+  ion-label {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--dark-yellow);
+  }
+}
+
+ion-input {
+  --placeholder-color: var(--black);
+  font-family: 'DM Sans', sans-serif;
+}
+
+.btn{
+  --background: var(--success-green);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif !important;
+  text-align: center;
+  margin-top: 20px;
+  width: 85%;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
   
